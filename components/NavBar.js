@@ -30,9 +30,9 @@ const NavBar = ({ navigation }) => {
     <View style={styles.navbar}>
       <TouchableOpacity
         style={styles.tab}
-        onPress={() => handleNavigate("Login")}
+        onPress={() => handleNavigate("Home")}
       >
-        <Text>Login</Text>
+        <Text>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.tab}
