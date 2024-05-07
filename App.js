@@ -9,6 +9,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NavBar from "./components/NavBar";
 import { EmptyScreen } from "./screens/placeholders/EmptyScreen";
 import Login from "./screens/Login";
+import styles from "./styles";
+import UploadPhoto from "./screens/UploadPhoto";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +19,7 @@ function MyTabs() {
     <Tab.Navigator tabBar={(props) => <NavBar {...props} />}>
       <Tab.Screen name="Home" component={Login} />
       <Tab.Screen name="page 1" component={EmptyScreen} />
-      <Tab.Screen name="page 2" component={EmptyScreen} />
+      <Tab.Screen name="page 2" component={UploadPhoto} />
       <Tab.Screen name="page 3" component={EmptyScreen} />
     </Tab.Navigator>
   );
@@ -53,13 +55,3 @@ export default function App() {
   );
   */
 }
-
-//default
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
