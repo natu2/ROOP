@@ -8,6 +8,9 @@ import * as ImagePicker from "expo-image-picker";
 //Project Files
 import Button from "../components/Button";
 import styles from "../styles";
+import ImageViewer from "../components/ImageViewer";
+
+const PlaceholderImage = require("../assets/clothing_rack.png");
 
 const UploadPhoto = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -30,12 +33,18 @@ const UploadPhoto = () => {
     }
   };
 
-  <SafeAreaView style={styles.container}>
-    <View style={styles.footerContainer}>
-      <Button label="Choose a photo" onPress={pickImageAsync} />
-    </View>
-    <StatusBar style="auto" />
-  </SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.footerContainer}>
+        <ImageViewer
+          placeholderImageSource={PlaceholderImage}
+          selectedImage={selectedImage}
+        ></ImageViewer>
+        <Button label="Choose a photo" onPress={pickImageAsync} />
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
 };
 
 export default UploadPhoto;

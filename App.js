@@ -17,9 +17,9 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator tabBar={(props) => <NavBar {...props} />}>
-      <Tab.Screen name="Home" component={Login} />
-      <Tab.Screen name="page 1" component={EmptyScreen} />
-      <Tab.Screen name="page 2" component={UploadPhoto} />
+      <Tab.Screen name="Home" component={EmptyScreen} />
+      <Tab.Screen name="page 1" component={Login} />
+      <Tab.Screen name="Create Post" component={UploadPhoto} />
       <Tab.Screen name="page 3" component={EmptyScreen} />
     </Tab.Navigator>
   );

@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
     height: 440,
     borderRadius: 18,
   },
+  imageContainer: {
+    flex: 1,
+    paddingTop: 58,
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",

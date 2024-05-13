@@ -42,9 +42,9 @@ const NavBar = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.tab}
-        onPress={() => handleNavigate("page 2")}
+        onPress={() => handleNavigate("Create Post")}
       >
-        <Text>page 2</Text>
+        <Text>Create Post</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.tab}
