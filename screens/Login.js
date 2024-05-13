@@ -3,6 +3,9 @@
  https://github.com/itzpradip/react-navigation-v6-mix/blob/master/src/screens/LoginScreen.js
  https://reactnative.dev/docs/handling-text-input
  https://alitalhacoban.medium.com/basic-login-screen-with-react-native-c9f7fdcc8dae
+
+ OR store login credentials in AsyncStorage: https://docs.expo.dev/versions/latest/sdk/async-storage/ and config navigation object so that journey starts with login when app is opened
+ then, upon login, they are navigated to the home page
  */
 import {
   View,
@@ -15,7 +18,7 @@ import {
 import React, { useState } from "react";
 import styles from "../styles";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   // To collect user input (not necessarily their actual info)
   const [state, setState] = useState({
     username: "",
@@ -41,7 +44,7 @@ const Login = () => {
     // password should be hidden: map from character to
     //changeUserData
     //YOU LEFT OFF HERE: plan- figure out what I'm supposed to pass and then just try to navigate back home for now
-    navigation.navigate("page 1");
+    navigation.navigate("Home");
   };
 
   return (
