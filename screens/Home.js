@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView } from "react-native";
 import Post from "../components/Post";
-import POSTS from "../data/posts";
+import { POSTS } from "../data/posts";
 
 const Home = ({ navigation }) => {
   return (

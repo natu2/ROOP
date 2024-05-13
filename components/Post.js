@@ -3,8 +3,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
-import styles from "../styles";
-
 const Post = ({ post }) => {
   <View>
     <PostHeader post={post} />
