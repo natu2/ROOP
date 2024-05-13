@@ -1,6 +1,17 @@
+import { SafeAreaView, ScrollView } from "react-native";
 import Post from "../components/Post";
 import POSTS from "../data/posts";
 
-const home = ({ navigation }) => {};
+const Home = ({ navigation }) => {
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        {POSTS.map((post, index) => (
+          <Post post={post} key={index} />
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
-export default home;
+export default Home;

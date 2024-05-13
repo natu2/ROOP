@@ -11,13 +11,14 @@ import { EmptyScreen } from "./screens/placeholders/EmptyScreen";
 import Login from "./screens/Login";
 import styles from "./styles";
 import UploadPhoto from "./screens/UploadPhoto";
+import Home from "./screens/Home";
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator tabBar={(props) => <NavBar {...props} />}>
-      <Tab.Screen name="Home" component={EmptyScreen} />
+      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="page 1" component={Login} />
       <Tab.Screen name="Create Post" component={UploadPhoto} />
       <Tab.Screen name="page 3" component={EmptyScreen} />
