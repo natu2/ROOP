@@ -4,15 +4,17 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
 const Post = ({ post }) => {
-  <View>
-    <PostHeader post={post} />
+  return (
     <View>
-      <PostImage post={post} />
-      <PostCaption post={post} />
-      <PostCommentSection post={post} />
-      <PostComments post={post} />
+      <PostHeader post={post} />
+      <View>
+        <PostImage post={post} />
+        <PostCaption post={post} />
+        <PostCommentSection post={post} />
+        <PostComments post={post} />
+      </View>
     </View>
-  </View>;
+  );
 };
 
 const PostHeader = ({ post }) => {
@@ -66,8 +68,9 @@ const PostComments = ({ post }) => (
   <>
     {post.comments.map((comment, index) => (
       <View key={index} style={{ flexDirection: "row", marginTop: 5 }}>
-        <Text style={{ fontWeight: 600 }}>{comment.user}</Text>{" "}
-        {comment.comment}
+        <Text>
+          <Text>{comment.user}</Text> {comment.comment}{" "}
+        </Text>
       </View>
     ))}
   </>
@@ -92,7 +95,6 @@ const styles = StyleSheet.create({
     borderColor: "#ff8501",
   },
   userName: {
-    fontWeight: 700,
     color: "white",
     marginLeft: 5,
   },
