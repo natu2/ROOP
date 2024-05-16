@@ -4,7 +4,7 @@ import { USERS } from "./users";
 export const POSTS = [
   {
     imageUrl:
-      "https://www.pexels.com/photo/woman-blowing-a-bubble-gum-12584691/",
+      "https://images.pexels.com/photos/12584691/pexels-photo-12584691.jpeg",
     user: USERS[0].user,
     caption: "Feeling bold with this colorful mix! 🌈 #colorful #boldfashion",
     profile_picture: USERS[0].image,
@@ -21,7 +21,7 @@ export const POSTS = [
   },
   {
     imageUrl:
-      "https://www.pexels.com/photo/photo-of-woman-wearing-sports-attire-3007759/",
+      "https://images.pexels.com/photos/3007759/pexels-photo-3007759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     user: USERS[1].user,
     caption: "Loving this summer vibe! 🌞 #summerstyle #fashion",
     profile_picture: USERS[1].image,
@@ -34,7 +34,7 @@ export const POSTS = [
   },
   {
     imageUrl:
-      "https://www.pexels.com/photo/photo-of-woman-wearing-turquoise-dress-3369722/",
+      "https://images.pexels.com/photos/3369722/pexels-photo-3369722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     user: USERS[2].user,
     caption: "Work hard, play hard.",
     profile_picture: USERS[2].image,

@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import Post from "../components/Post";
 import { POSTS } from "../data/posts";
 
@@ -7,7 +7,9 @@ const Home = ({ navigation }) => {
     <SafeAreaView>
       <ScrollView>
         {POSTS.map((post, index) => (
-          <Post post={post} key={index} />
+          <View key={index}>
+            <Post post={post} />
+          </View>
         ))}
       </ScrollView>
     </SafeAreaView>

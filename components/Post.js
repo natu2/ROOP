@@ -20,8 +20,8 @@ const Post = ({ post }) => {
 const PostHeader = ({ post }) => {
   return (
     <View style={styles.headerContainer}>
-      <Image source={{ uri: post.pic }} style={styles.story} />
-      <Text style={styles.userName}>{post.username}</Text>
+      <Image source={{ uri: post.profile_picture }} style={styles.story} />
+      <Text>{post.user}</Text>
     </View>
   );
 };
@@ -37,16 +37,14 @@ const PostImage = ({ post }) => {
   );
 };
 
-const PostCaption = ({ post }) => (
-  <View style={{ marginTop: 5 }}>
-    <Text>
-      {" "}
-      style= {{ fontWeight: 600 }}
-      {post.username}
-    </Text>
-    <Text> {post.caption} </Text>
-  </View>
-);
+const PostCaption = ({ post }) => {
+  return (
+    <View style={{ marginTop: 5 }}>
+      <Text style={{ fontWeight: 600 }}>{post.username}</Text>
+      <Text> {post.caption} </Text>
+    </View>
+  );
+};
 
 //will create comment section IF there are more than 0 comments for this post
 // if there are more than 1 comments then: View all [# of comments] comments
