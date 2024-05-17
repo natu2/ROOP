@@ -1,7 +1,10 @@
+//Sources: https://reactnavigation.org/docs/auth-flow/
+// and the snack embedded in the site ^
 //React & Other Libary Imports
 import { Text, View, StyleSheet, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React, { useState } from "react";
 
 //Styles, Icons, Illustrations
 
@@ -14,13 +17,14 @@ import UploadPhoto from "./screens/UploadPhoto";
 import Home from "./screens/Home";
 
 const Tab = createBottomTabNavigator();
+const getIsSignedIn = () => {};
 
-function MyTabs() {
+function MainTabs() {
   return (
     <Tab.Navigator tabBar={(props) => <NavBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="page 1" component={Login} />
-      <Tab.Screen name="Create Post" component={UploadPhoto} />
+      <Tab.Screen name="page 1" component={EmptyScreen} />
+      <Tab.Screen name="Create" component={UploadPhoto} />
       <Tab.Screen name="page 3" component={EmptyScreen} />
     </Tab.Navigator>
   );
@@ -36,23 +40,22 @@ function MyTabs() {
  * @returns The main view for the app
  */
 export default function App() {
-  return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
-  );
+  const isSignedIn = getIsSignedIn();
 
-  /** 
-   * Commenting out to be able to view Login page
   return (
     <NavigationContainer>
-      <Tab.Navigator tabBar={(props) => <NavBar {...props} />}>
-        <Tab.Screen name="Home" component={EmptyScreen} />
-        <Tab.Screen name="page 1" component={EmptyScreen} />
-        <Tab.Screen name="page 2" component={EmptyScreen} />
-        <Tab.Screen name="page 3" component={EmptyScreen} />
-      </Tab.Navigator>
+      {isSignedIn ? (
+        <>
+          <MainTabs />
+        </>
+      ) : (
+        <>
+          <Tab.Navigator>
+            <Tab.Screen name="Login" component={Login} />
+            <Tab.Screen name="Sign-Up" component={EmptyScreen} />
+          </Tab.Navigator>
+        </>
+      )}
     </NavigationContainer>
   );
-  */
 }
